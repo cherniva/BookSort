@@ -19,6 +19,7 @@ public class Main {
             System.exit(2);
         }
 
+        bookSort.sortBooks();
 
     }
 }
