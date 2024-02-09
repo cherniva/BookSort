@@ -85,7 +85,8 @@ public class BookSort {
         try {
             File file = new File(filename);
             FileWriter fileWriter = new FileWriter(file);
-            CSVWriter writer = new CSVWriter(fileWriter);
+//            CSVWriter writer = new CSVWriter(fileWriter);
+            CSVWriter writer = new CSVWriter(fileWriter, ';', Character.MIN_VALUE);
 
             String[] header = {"ISBN", "Nazev", "Autor", "Vydano"};
             writer.writeNext(header);
