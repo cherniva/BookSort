@@ -1,5 +1,9 @@
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.xml.sax.SAXException;
+
+import javax.xml.parsers.ParserConfigurationException;
+import java.io.IOException;
 
 public class Main {
 
@@ -19,7 +23,13 @@ public class Main {
             System.exit(2);
         }
 
-        bookSort.sortBooks();
+        try {
+            bookSort.sortBooks();
+        }
+        catch (ParserConfigurationException | IOException | SAXException e) {
+            log.error("Cannot complete task. Please check file content and try again.");
+            System.exit(3);
+        }
 
     }
 }
